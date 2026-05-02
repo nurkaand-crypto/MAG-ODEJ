@@ -67,4 +67,3 @@ def get_phone(message):
 
 # 🚀 запуск
 bot.polling(none_stop=True)
-
