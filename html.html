@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МАГ - Магазин одежды и обуви</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">МАГ-ОДЕЖ</div>
+            <ul class="nav-links">
+                <li><a href="#main">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="basket.html" class="cart-link">
+                    🛒 Корзина <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основная страница с товарами -->
+    <div id="main" class="main-content">
+        <!-- Фильтры -->
+        <aside class="filters-sidebar">
+            <h2>Фильтры</h2>
+            
+            <!-- Фильтр по категориям -->
+            <div class="filter-group">
+                <h3>Категория</h3>
+                <label><input type="checkbox" value="all" class="category-filter" checked> Все товары</label>
+                <label><input type="checkbox" value="clothes" class="category-filter"> Одежда</label>
+                <label><input type="checkbox" value="shoes" class="category-filter"> Обувь</label>
+                <label><input type="checkbox" value="accessories" class="category-filter"> Аксессуары</label>
+            </div>
+
+            <!-- Фильтр по цене -->
+            <div class="filter-group">
+                <h3>Цена</h3>
+                <div class="price-range">
+                    <input type="range" id="priceMin" min="0" max="10000" value="0" step="100">
+                    <input type="range" id="priceMax" min="0" max="10000" value="10000" step="100">
+                </div>
+                <div class="price-display">
+                    От: <span id="minPrice">0</span> ₽
+                    До: <span id="maxPrice">10000</span> ₽
+                </div>
+            </div>
+
+            <!-- Фильтр по размеру -->
+            <div class="filter-group">
+                <h3>Размер</h3>
+                <label><input type="checkbox" value="all-sizes" class="size-filter" checked> Все размеры</label>
+                <label><input type="checkbox" value="XS" class="size-filter"> XS</label>
+                <label><input type="checkbox" value="S" class="size-filter"> S</label>
+                <label><input type="checkbox" value="M" class="size-filter"> M</label>
+                <label><input type="checkbox" value="L" class="size-filter"> L</label>
+                <label><input type="checkbox" value="XL" class="size-filter"> XL</label>
+                <label><input type="checkbox" value="XXL" class="size-filter"> XXL</label>
+            </div>
+
+            <button class="filter-reset">Очистить фильтры</button>
+        </aside>
+
+        <!-- Товары -->
+        <div class="products-container">
+            <h1>Наш каталог</h1>
+            <div class="products-grid" id="productsGrid">
+                <!-- Товары будут загружены здесь через JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>МАГ-ОДЕЖ</h3>
+                <p>Ваш любимый магазин одежды и обуви</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: info@mag-odezh.ru</p>
+                <p>Телефон: +7 (900) 123-45-67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Условия</h3>
+                <p><a href="#">Политика конфиденциальности</a></p>
+                <p><a href="#">Условия использования</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 МАГ-ОДЕЖ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для добавления товара -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Товар">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <p class="modal-price">Цена: <span id="modalPrice"></span> ₽</p>
+                    <div class="size-selector">
+                        <label>Размер:</label>
+                        <select id="sizeSelect">
+                            <option value="">Выберите размер</option>
+                        </select>
+                    </div>
+                    <div class="quantity-selector">
+                        <label>Количество:</label>
+                        <input type="number" id="quantityInput" value="1" min="1">
+                    </div>
+                    <button id="addToCartBtn" class="btn-primary">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

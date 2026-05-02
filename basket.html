@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - МАГ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">МАГ-ОДЕЖ</div>
+            <ul class="nav-links">
+                <li><a href="html.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="basket.html" class="cart-link active">
+                    🛒 Корзина <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Корзина -->
+    <div class="basket-container">
+        <h1>Ваша корзина</h1>
+        
+        <div class="basket-content">
+            <!-- Товары в корзине -->
+            <div class="basket-items">
+                <div id="emptyBasket" class="empty-message">
+                    <p>Ваша корзина пуста</p>
+                    <a href="html.html" class="btn-primary">Вернуться к покупкам</a>
+                </div>
+                <div id="basketItems" class="items-list">
+                    <!-- Товары будут загружены здесь -->
+                </div>
+            </div>
+
+            <!-- Итоговая информация -->
+            <aside class="basket-summary">
+                <h2>Итого</h2>
+                <div class="summary-row">
+                    <span>Товаров:</span>
+                    <span id="totalItems">0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Сумма товаров:</span>
+                    <span id="subtotal">0 ₽</span>
+                </div>
+                <div class="summary-row">
+                    <span>Доставка:</span>
+                    <span id="delivery">500 ₽</span>
+                </div>
+                <div class="summary-row total">
+                    <span>ИТОГО:</span>
+                    <span id="total">0 ₽</span>
+                </div>
+
+                <!-- Промокод -->
+                <div class="promo-section">
+                    <input type="text" id="promoCode" placeholder="Введите промокод">
+                    <button id="applyPromo" class="btn-secondary">Применить</button>
+                </div>
+
+                <!-- Данные покупателя -->
+                <div class="delivery-info">
+                    <h3>Ваше имя</h3>
+                    <input type="text" id="fullName" placeholder="Введите ваше имя" required>
+                </div>
+
+                <!-- Кнопка оформления -->
+                <a href="https://t.me/MAGODEJ2013bot" target="_blank" class="btn-primary full-width">Оформить заказ</a>
+                
+                <a href="html.html" class="btn-secondary full-width">Продолжить покупки</a>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>МАГ-ОДЕЖ</h3>
+                <p>Ваш любимый магазин одежды и обуви</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: info@mag-odezh.ru</p>
+                <p>Телефон: +7 (900) 123-45-67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Условия</h3>
+                <p><a href="#">Политика конфиденциальности</a></p>
+                <p><a href="#">Условия использования</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 МАГ-ОДЕЖ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
